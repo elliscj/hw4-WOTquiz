@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(38, 38, 38);
+  color: rgb(198, 198, 198);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  border-bottom: 10px solid rgb(133, 36, 36);
+}
+
+ul {
+  list-style: lower-alpha;
+  text-align: center;
+}
+
+h2,
+ul {
+  text-align: center;
+}
+
+#quiz-box {
+  padding: 10px;
+  margin-left: 100px;
+  margin-right: 100px;
+  background-color: black;
+  border: 5px solid rgb(133, 36, 36);
+  border-radius: 20px;
+}
+
+.button {
+  border: 2px solid rgb(133, 36, 36);
+  padding: 5px;
+  margin: 5px;
+  border-radius: 5px;
+}

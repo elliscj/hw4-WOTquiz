@@ -1,0 +1,62 @@
+---HTML
+-get base page layout
+-h1=title, stays the same
+-h2=?'s they are changed created and appended in js?
+-write a question with answer options to see styling
+
+---CSS
+-style the items how I want for each question 
+-will they style the items that are appended in js?
+-
+
+---JS
+-store references to the buttons...for each question/function?
+-declare variables
+-create user object..key value pairs are the ansers 
+-create answer object...key value pairs are correct answers
+
+
+
+
+
+---?'s h2s
+
+-who is Rand al Thor's father?
+--Janduin -
+--Tam
+--Lews Therin
+--King Aemon al Caar al Thorin
+
+-Who tainted the male half of the One Power?
+--Lews Therin
+--the Dark One -
+--Ishamael
+--Raolin Darksbane
+
+-which of the following is actually a Terangreal?
+--Callandor
+--Choedan Kal
+--Vora's Sa'angreal (the White Rod)
+--the Access Key's -
+
+-Whos name means 'betrayer of hope' in the old tounge?
+--Ba'alzamon
+--Ishamael -
+--Balthamel
+--Demondred
+
+-Which of the following is Rands half brother?
+--Gawan
+--Galad -
+--Lan
+--Uno
+
+-What is on the Malkieri flag?
+--Golden Crane -
+--Red Eagle
+--Red hand
+--Dragon
+
+-when answer is recorded, display <p> correct/incorrect for specified time??
+
+-winning score is time left + 5 for each right answer
