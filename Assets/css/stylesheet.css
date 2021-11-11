@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Merienda", cursive, sans-serif;
 }
 
 body {
@@ -9,7 +10,8 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+  font-size: 20px;
 }
 
 h1 {
@@ -17,21 +19,21 @@ h1 {
   border-bottom: 10px solid rgb(133, 36, 36);
 }
 
-ul {
+div {
   list-style: lower-alpha;
   text-align: center;
 }
 
 h2,
-ul {
+div {
   text-align: center;
 }
 
 #quiz-box {
   padding: 10px;
-  margin-left: 100px;
-  margin-right: 100px;
-  background-color: black;
+  margin-left: 150px;
+  margin-right: 150px;
+  background-color: rgb(14, 14, 14);
   border: 5px solid rgb(133, 36, 36);
   border-radius: 20px;
 }
@@ -41,4 +43,15 @@ ul {
   padding: 5px;
   margin: 5px;
   border-radius: 5px;
+}
+
+#book {
+  color: rgb(215, 185, 85);
+  font-style: italic;
+  font-size: 28px;
+}
+
+#high-scores {
+  text-align: center;
+  list-style-position: inside;
 }

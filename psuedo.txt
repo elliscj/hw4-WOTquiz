@@ -37,7 +37,7 @@
 --Callandor
 --Choedan Kal
 --Vora's Sa'angreal (the White Rod)
---the Access Key's -
+--the Access Keys -
 
 -Whos name means 'betrayer of hope' in the old tounge?
 --Ba'alzamon
@@ -60,3 +60,76 @@
 -when answer is recorded, display <p> correct/incorrect for specified time??
 
 -winning score is time left + 5 for each right answer
+
+-steps for what exactly needs to happen next for it to work
+--then that specific step is easier to look up instead of looking up whole process
+
+--<hr>--separate content with line benieth 
+
+$("#top").children().css("color", "yellow");
+console.log($("#top").children());
+
+clearEl.hide(); (.show())
+
+
+09 event delegation
+
+function renderLetters() {
+  var letters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+    "_",
+  ];
+
+  // Dynamically create buttons
+  // Create a for-loop to iterate through the letters array.
+  for (var i = 0; i < letters.length; i++) {
+    // Create button
+    var letterBtn = $("<button>");
+    // Assign style to the button
+    letterBtn.addClass("letter-button btn btn-info");
+    // Assign the letter to the data-letter attribute
+    letterBtn.attr("data-letter", letters[i]);
+    // Display the letter
+    letterBtn.text(letters[i]);
+    // Attach the letter element
+    buttonListEl.append(letterBtn);
+  }
+}
+
+event.target to get data attribute of item not in html until dynamically added with js
+buttonListEl.on("click", ".letter-button", function (event) {
+  
+  
+  var displayLetterEl = $("<div>");
+
+  displayLetterEl.addClass("letter");
+
+  // get letter from clicked letter button's `data-letter` attribute and use it for display
+  displayLetterEl.text($(event.target).attr("data-letter"));
+  displayEl.append(displayLetterEl);
+});

@@ -6,25 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WOT Quiz</title>
     <link rel="stylesheet" href="./Assets/css/stylesheet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merienda:wght@700&family=Yuji+Syuku&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <nav>
-      <div>high scores</div>
-      <div>timer</div>
+      <!-- <div>high scores</div> -->
+      <div id="timer">Timer : <span id="time-left"></span></div>
     </nav>
     <section>
       <h1>
-        How Much Do You Know About <span id="book">The Wheel of Time?</span>
+        How Much Do YOU Know About <span id="book">The Wheel of Time</span> ?
       </h1>
     </section>
     <section id="quiz-box">
-      <h2 id="question">Who is Rand al Thor's father?</h2>
-      <ul id="options">
-        <li class="button" , id="option1">Janduin</li>
-        <li class="button" , id="option2">Tam al Thor</li>
-        <li class="button" , id="option3">Lews Therin Telamon</li>
-        <li class="button" , id="option4">Aemon al Caar al Thorin</li>
+      <h2 id="question">START</h2>
+      <div id="options">
+        <button class="button" , id="optionA">Janduin</button>
+        <button class="button" , id="optionB">Tam al Thor</button>
+        <button class="button" , id="optionC">Lews Therin Telamon</button>
+        <button class="button" , id="optionD">Aemon al Caar al Thorin</button>
+      </div>
+    </section>
+    <section id="correct-incorrect">
+      <p></p>
+    </section>
+    <section id="high-scores">
+      <h3>High Scores</h3>
+      <ul>
+        <li>cje 100</li>
       </ul>
     </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
