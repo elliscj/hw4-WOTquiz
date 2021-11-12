@@ -95,8 +95,7 @@ function gameOver() {
   userInitials = prompt(
     "Please enter your initials so you can post your high score."
   );
-  console.log(userScore);
-  console.log(userInitials);
+
   finalScore();
 }
 
