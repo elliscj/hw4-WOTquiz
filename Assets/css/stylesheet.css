@@ -38,7 +38,8 @@ div {
   border-radius: 20px;
 }
 
-.button {
+.button,
+.answer-button {
   border: 2px solid rgb(133, 36, 36);
   padding: 5px;
   margin: 5px;
@@ -60,7 +61,8 @@ div {
   width: 100%;
 }
 
-#start-button {
+#start-button,
+#restart-button {
   margin: 20px auto;
   display: block;
 }

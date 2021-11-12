@@ -1,8 +1,9 @@
 var quizBoxEl = $("#quiz-box");
 var timeEl = $("#time-left");
-var highScoreEl = $("#high-scores");
+var highScoreUl = $("#high-scores");
+var highScoreEl = $(".high-scores");
 var buttonEl = $(".button");
-var answerButton = $("#options");
+var answerButton = $(".answer-button");
 var startButtonEl = $("#start-button");
 var currentQuestionIndex = 0;
 var questionTextEl = $("#question");
@@ -10,7 +11,8 @@ var optionAEl = $("#optionA");
 var optionBEl = $("#optionB");
 var optionCEl = $("#optionC");
 var optionDEl = $("#optionD");
-
+var timerInterval = "";
+var restartButton = $("#restart-button");
 //array of objects title question key value pairs for querstion and answers
 var quizQuestions = [
   {
@@ -65,23 +67,43 @@ var quizQuestions = [
   },
 ];
 
-//create variable to save info json parse empty array with score and initials
-//check local storage pull local storage if not there make empty array the stringify and save
-//var index = 0 incriment the index nnumber and call the object
-//
-var user = {
-  initials: userinitials,
-  score: userScore,
-};
-var userinitials;
+var userInitials = "";
 var userScore = 0;
 var secondsLeft = 60;
 
-var highScores = JSON.parse(localStorage.getItem("scores")) || [];
-console.log(highScores);
+function finalScore() {
+  const allData = JSON.parse(localStorage.getItem("data")) || [];
+  const userDataEntry = { initials: userInitials, score: userScore };
+  allData.push(userDataEntry);
+  localStorage.setItem("data", JSON.stringify(allData));
+  highScoreEl.show();
+  console.log(userDataEntry);
+  let template = "";
+  for (let i = 0; i < allData.length; i++) {
+    template += `<li> - ${allData[i].initials}
+    ${allData[i].score}</li>`;
+  }
+  $("#high-scores").append(template);
+  currentQuestionIndex = 0;
 
-// buttonEl.hide();
-// highScoreEl.hide();
+  restartButton.show();
+}
+
+function gameOver() {
+  clearInterval(timerInterval);
+  alert("Game Over!");
+  userInitials = prompt(
+    "Please enter your initials so you can post your high score."
+  );
+  console.log(userScore);
+  console.log(userInitials);
+  finalScore();
+}
+
+answerButton.hide();
+highScoreEl.hide();
+restartButton.hide();
+console.log(quizQuestions.length);
 
 answerButton.on("click", function (event) {
   if (quizQuestions[currentQuestionIndex].answer === event.target.outerText) {
@@ -90,52 +112,49 @@ answerButton.on("click", function (event) {
   } else {
     secondsLeft -= 5;
   }
-
-  console.log(event);
-
   currentQuestionIndex++;
 
   renderQuestion();
 });
 
 function renderQuestion() {
-  questionTextEl.text(quizQuestions[currentQuestionIndex].title);
-  optionAEl.text(quizQuestions[currentQuestionIndex].userChoices[0]);
-  optionBEl.text(quizQuestions[currentQuestionIndex].userChoices[1]);
-  optionCEl.text(quizQuestions[currentQuestionIndex].userChoices[2]);
-  optionDEl.text(quizQuestions[currentQuestionIndex].userChoices[3]);
+  if (currentQuestionIndex < quizQuestions.length) {
+    questionTextEl.text(quizQuestions[currentQuestionIndex].title);
+    optionAEl.text(quizQuestions[currentQuestionIndex].userChoices[0]);
+    optionBEl.text(quizQuestions[currentQuestionIndex].userChoices[1]);
+    optionCEl.text(quizQuestions[currentQuestionIndex].userChoices[2]);
+    optionDEl.text(quizQuestions[currentQuestionIndex].userChoices[3]);
+  } else {
+    gameOver();
+  }
 }
 
 function startQuiz() {
+  answerButton.show();
+  startButtonEl.hide();
+  restartButton.hide();
+  secondsLeft = 60;
+  userScore = 0;
+  userInitials = "";
   renderQuestion();
 
   timer();
+  highScoreEl.hide();
 }
-
-buttonEl.on("click", function () {});
 
 function timer() {
   // Sets interval in variable
-  var timerInterval = setInterval(function () {
+  timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.text(secondsLeft);
 
-    if (secondsLeft === 0) {
+    if (secondsLeft <= 0) {
       clearInterval(timerInterval);
-      timesUp();
-    } //else if ((quizQuestions[i] = quizQuestions.length)) {
-    //   //prompt for initials and append high scores?
-    // }
+      gameOver();
+      return;
+    }
   }, 1000);
 }
 
-function timesUp() {
-  timeEl.textContent = "0";
-  alert("Times Up!");
-  userInitials = prompt(
-    "Please enter your initials so you can post your high score."
-  );
-}
-
 startButtonEl.on("click", startQuiz);
-console.log(user);
+restartButton.on("click", startQuiz);
