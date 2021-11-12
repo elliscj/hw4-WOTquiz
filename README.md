@@ -2,7 +2,7 @@
 
 ## Motivation
 
-Have you ever read The Wheel of Time? if your answer was no, I have a homework assignment for you; go to your local book store or to Audible and buy them. If you have any interest in fantasy I promise you will not be disappointed. It is my favorite fantasy seiries and I love talking to people about it. I made this quiz to challenge my friends knowledge and prove that I am the ultimate Wheel of Time nerd.
+Have you ever read The Wheel of Time? if your answer was no, I have a homework assignment for you; go to your local book store or to Audible and buy them. If you have any interest in fantasy I promise you will not be disappointed. It is my favorite fantasy seiries and I love talking to people about it. I made this quiz to challenge my friends knowledge and prove that I am the ultimate Wheel of Time nerd.cle
 
 ## Future Fixes
 
@@ -15,6 +15,8 @@ In the future I would like to add some more functionality to the quiz including 
 ## Deployed Site Link
 
 Test your knowledge!!
+
+https://elliscj.github.io/hw4-WOTquiz/
 
 ## License
 
