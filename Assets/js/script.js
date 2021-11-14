@@ -97,6 +97,7 @@ function gameOver() {
   );
 
   finalScore();
+  answerButton.hide();
 }
 
 answerButton.hide();
